@@ -13,12 +13,12 @@ def createBkpFull():
         exclude = '*.log, *.temp, .recycle'
         opts = 'Cravzp'
         #bkp = 'rsync -%s --exclude={%s} %s %s' %(opts,exclude,pathFrom,pathTo)
-        bkp = 'rsync -%s --rsh="ssh -l %s" --exclude={%s} %s %s' %(opts,USER,exclude,pathFrom,pathTo)
+        bkp = 'rsync -%s --exclude={%s} %s %s' %(opts,exclude,pathFrom,pathTo)
 
         return bkp
 
-def createBkpInc(): #not ready
-        return True
+# def createBkpInc(): #not ready
+#        return True
 
 def createLog():
         logFile = '%s-bkp-full.txt' % date
